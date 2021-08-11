@@ -10,9 +10,10 @@ public class MapOfTheHashmatique {
         System.out.println(trackList.get("Smells Like Teen Spirit")); // pull out one song by title
 
         Set<String> tracks = trackList.keySet(); //pull out all songs using format "Track: Lyric"
-        for(String key : tracks) {
-            System.out.println(key + ": " + trackList.get(key));
-        } //for loop saying "print all the song lyrics by Track
+        for(String key : tracks) { //or for(String key : tracklist.keySet();)
+            // System.out.println(key + ": " + trackList.get(key));
+            System.out.println(String.format("Track: %s, Lyrics: %s", key, trackList.get(key)));
+        }
     }
 
 }
