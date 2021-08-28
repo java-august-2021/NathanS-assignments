@@ -1,0 +1,14 @@
+@charset "UTF-8";
+#wrapper{
+	margin: 0px, auto;
+	padding-top: 150px;
+}
+.container{
+	text-align: center;
+}
+#error{
+	color: red;
+}
+#tenents{
+	list-style: none;
+}
