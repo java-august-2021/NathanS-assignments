@@ -1,0 +1,15 @@
+@charset "UTF-8";
+#wrapper{
+	text-align: center;
+	padding: 50px;
+}
+#survey{
+	padding: 50px;
+}
+#survey-button{
+	margin: 10px;
+	text-align: right;
+}
+#survey-title{
+	margin-bottom: 20px;
+}
