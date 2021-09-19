@@ -14,11 +14,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.nathanseals.authentication.models.User;
 import com.nathanseals.authentication.services.UserService;
+import com.nathanseals.authentication.validator.UserValidator;
 
 @Controller
 public class UserController {
 	@Autowired
 	private UserService userServ;
+	@Autowired
+	private UserValidator uValid;
 	
 	@RequestMapping("/")
 	public String index() {
@@ -36,6 +39,7 @@ public class UserController {
     @RequestMapping(value="/registration", method=RequestMethod.POST)
     public String registerUser(@Valid @ModelAttribute("user") User user, BindingResult result, HttpSession session) {
         // if result has errors, return the registration page (don't worry about validations just now)
+    	uValid.validate(user, result);
     	if (result.hasErrors()) {
     		return "registrationPage.jsp";
     	}
